@@ -120,12 +120,12 @@ Each device provides comprehensive information:
 # Refresh specific device
 service: gobzigh.refresh_device
 data:
-  device_id: "b0b21c51a460"
+  device_id: "a1b2c3d4e5f6"
 
 # Control relay
 service: gobzigh.control_relay
 data:
-  device_id: "b0b21c51a460" 
+  device_id: "a1b2c3d4e5f6" 
   state: true
 ```
 

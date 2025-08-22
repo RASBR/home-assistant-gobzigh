@@ -39,7 +39,7 @@ A custom Home Assistant integration for GOBZIGH liquid level monitoring devices.
 ### User ID
 Your GOBZIGH User ID is a 24-character hexadecimal string that identifies your account. You can find this in your GOBZIGH mobile app or web interface.
 
-Example: `665854859c2ad80012bb752d`
+Example: `507f1f77bcf86cd799439011`
 
 ### Device Discovery
 Once configured, the integration will automatically discover all devices associated with your User ID. Each device will be added with all relevant sensors and controls.

@@ -102,7 +102,7 @@ class GobzighConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             data_schema=USER_SCHEMA,
             errors=errors,
             description_placeholders={
-                "example_user_id": "665854859c2ad80012bb752d"
+                "example_user_id": "507f1f77bcf86cd799439011"
             }
         )
 

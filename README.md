@@ -73,7 +73,7 @@ A comprehensive Home Assistant custom integration for GOBZIGH liquid level monit
 
 ### Initial Setup
 1. During setup, you'll need your **GOBZIGH User ID** (24-character hexadecimal string)
-2. Example: `665854859c2ad80012bb752d`
+2. Example: `507f1f77bcf86cd799439011`
 3. The integration will automatically discover all devices associated with your account
 
 ### Device Discovery
@@ -111,14 +111,14 @@ For each device (example: "Pool Tank"), the integration creates:
 ```yaml
 service: gobzigh.refresh_device
 data:
-  device_id: "b0b21c51a460"
+  device_id: "a1b2c3d4e5f6"
 ```
 
 ### Control Relay
 ```yaml
 service: gobzigh.control_relay
 data:
-  device_id: "b0b21c51a460"
+  device_id: "a1b2c3d4e5f6"
   state: true  # or false
 ```
 
