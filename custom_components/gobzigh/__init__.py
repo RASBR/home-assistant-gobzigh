@@ -1,26 +1,18 @@
-"""The GOBZIGH integration."""
-from __future__ import annotations
-
+"""Initialize the GOBZIGH integration."""
 import logging
-import os
 from typing import Any
 
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import ConfigEntryNotReady
 from homeassistant.helpers import device_registry as dr
-from homeassistant.components.http.static import StaticPathConfig
 
 from .const import DOMAIN, CONF_USER_ID
 from .coordinator import GobzighDataUpdateCoordinator
 from .api import GobzighAPI
 from .services import async_setup_services, async_unload_services
-from .icons import get_device_icon
 
 _LOGGER = logging.getLogger(__name__)
-
-PLATFORMS: list[Platform] = [Platform.SENSOR, Platform.BINARY_SENSOR, Platform.SWITCH]
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
@@ -49,19 +41,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     hass.data.setdefault(DOMAIN, {})
     hass.data[DOMAIN][entry.entry_id] = coordinator
 
-    # Register static path for images
-    static_path = os.path.join(os.path.dirname(__file__), "static")
-    await hass.http.async_register_static_paths([
-        StaticPathConfig(
-            url_path=f"/api/{DOMAIN}/static",
-            path=static_path,
-            cache_headers=False
-        )
-    ])
-    _LOGGER.info("Registered static path: /api/%s/static -> %s", DOMAIN, static_path)
-
     # Set up platforms
-    await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
+    await hass.config_entries.async_forward_entry_setups(entry, ["sensor", "binary_sensor", "switch"])
 
     # Set up services
     await async_setup_services(hass)
@@ -74,16 +55,10 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     # Unload services
     await async_unload_services(hass)
     
-    if unload_ok := await hass.config_entries.async_unload_platforms(entry, PLATFORMS):
+    if unload_ok := await hass.config_entries.async_unload_platforms(entry, ["sensor", "binary_sensor", "switch"]):
         hass.data[DOMAIN].pop(entry.entry_id)
 
     return unload_ok
-
-
-async def async_reload_entry(hass: HomeAssistant, entry: ConfigEntry) -> None:
-    """Reload config entry."""
-    await async_unload_entry(hass, entry)
-    await async_setup_entry(hass, entry)
 
 
 def get_device_info(device_data: dict[str, Any]) -> dict[str, Any]:

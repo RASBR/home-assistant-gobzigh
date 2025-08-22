@@ -60,15 +60,6 @@ A comprehensive Home Assistant custom integration for GOBZIGH liquid level monit
 4. Go to **Settings** → **Devices & Services** → **Add Integration**
 5. Search for "GOBZIGH" and follow the setup wizard
 
-### Method 2: Using Installation Script
-
-1. Download this repository
-2. Run the installation script:
-   ```bash
-   python3 install_integration.py
-   ```
-3. Follow the prompts to automatically install to your Home Assistant
-
 ## Configuration
 
 ### Initial Setup
