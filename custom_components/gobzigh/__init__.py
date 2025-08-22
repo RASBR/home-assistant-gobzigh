@@ -10,7 +10,6 @@ from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import ConfigEntryNotReady
 from homeassistant.helpers import device_registry as dr
-from homeassistant.components.http import StaticPathConfig
 
 from .const import DOMAIN, CONF_USER_ID
 from .coordinator import GobzighDataUpdateCoordinator
@@ -51,13 +50,12 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     # Register static path for images
     static_path = os.path.join(os.path.dirname(__file__), "static")
-    await hass.http.async_register_static_paths([
-        StaticPathConfig(
-            url_path=f"/api/{DOMAIN}/static",
-            path=static_path,
-            cache_headers=False
-        )
-    ])
+    hass.http.register_static_path(
+        f"/api/{DOMAIN}/static",
+        static_path,
+        cache_headers=False
+    )
+    _LOGGER.info("Registered static path: /api/%s/static -> %s", DOMAIN, static_path)
 
     # Set up platforms
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
@@ -98,10 +96,4 @@ def get_device_info(device_data: dict[str, Any]) -> dict[str, Any]:
         "configuration_url": f"http://{device_data.get('ap_ip', '')}" if device_data.get("ap_ip") else None,
     }
     
-    # Add device icon - this will show up in device pages
-    icon_url = get_device_icon(model_name)
-    if icon_url and not device_info.get("configuration_url"):
-        # Only use icon as configuration_url if no actual config URL exists
-        device_info["configuration_url"] = icon_url
-        
     return device_info

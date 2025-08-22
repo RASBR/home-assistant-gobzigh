@@ -1,21 +1,19 @@
 {
   "domain": "gobzigh",
   "name": "GOBZIGH",
-  "codeowners": ["@rasbr"],
-  "config_flow": true,
-  "dependencies": [],
+  "version": "1.0.1",
   "documentation": "https://github.com/RASBR/home-assistant-gobzigh",
-  "integration_type": "device",
+  "dependencies": [],
+  "codeowners": ["@rasbr"],
   "iot_class": "cloud_polling",
+  "config_flow": true,
+  "requirements": [],
+  "homeassistant": "2024.1.0",
+  "integration_type": "device",
   "issue_tracker": "https://github.com/RASBR/home-assistant-gobzigh/issues",
   "loggers": ["custom_components.gobzigh"],
-  "requirements": [],
-  "version": "1.0.1",
-  "icon": "icon",
-  "brand": {
-    "icon": "icon",
-    "dark": "dark_icon",
-    "logo": "logo",
-    "dark_logo": "dark_logo"
-  }
+  "icon": "static/icon.png",
+  "dark_icon": "static/dark_icon.png",
+  "logo": "static/logo.png",
+  "dark_logo": "static/dark_logo.png"
 }
