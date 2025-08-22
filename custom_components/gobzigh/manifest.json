@@ -10,5 +10,5 @@
   "issue_tracker": "https://github.com/RASBR/home-assistant-gobzigh/issues",
   "loggers": ["custom_components.gobzigh"],
   "requirements": [],
-  "version": "1.0.0"
+  "version": "1.0.1"
 }

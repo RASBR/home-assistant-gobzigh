@@ -26,6 +26,7 @@ from homeassistant.util import dt as dt_util
 from . import get_device_info
 from .const import DOMAIN, LIQUID_TYPE_MAP, UNIT_MAP
 from .coordinator import GobzighDataUpdateCoordinator
+from .icons import get_liquid_level_icon
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -302,6 +303,17 @@ class GobzighSensor(CoordinatorEntity[GobzighDataUpdateCoordinator], SensorEntit
             
         percentage = (current_volume / max_volume) * 100
         return round(percentage, 0)
+
+    @property
+    def entity_picture(self) -> str | None:
+        """Return entity picture for liquid level sensors."""
+        if self.entity_description.key == "percentage":
+            device_data = self.coordinator.data.get(self._device_id, {})
+            settings = device_data.get("settings", {})
+            liquid_type = settings.get("liquid_type", 0)
+            percentage = self.native_value or 0
+            return get_liquid_level_icon(liquid_type, percentage)
+        return None
 
     @property
     def extra_state_attributes(self) -> dict[str, Any] | None:

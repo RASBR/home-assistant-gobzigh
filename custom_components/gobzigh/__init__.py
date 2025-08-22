@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import logging
+import os
 from typing import Any
 
 from homeassistant.config_entries import ConfigEntry
@@ -9,11 +10,13 @@ from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import ConfigEntryNotReady
 from homeassistant.helpers import device_registry as dr
+from homeassistant.components.http import StaticPathConfig
 
 from .const import DOMAIN, CONF_USER_ID
 from .coordinator import GobzighDataUpdateCoordinator
 from .api import GobzighAPI
 from .services import async_setup_services, async_unload_services
+from .icons import get_device_icon
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -46,6 +49,14 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     hass.data.setdefault(DOMAIN, {})
     hass.data[DOMAIN][entry.entry_id] = coordinator
 
+    # Register static path for images
+    static_path = os.path.join(os.path.dirname(__file__), "static")
+    hass.http.register_static_path(
+        f"/api/{DOMAIN}/static",
+        static_path,
+        cache_headers=False
+    )
+
     # Set up platforms
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
 
@@ -74,12 +85,20 @@ async def async_reload_entry(hass: HomeAssistant, entry: ConfigEntry) -> None:
 
 def get_device_info(device_data: dict[str, Any]) -> dict[str, Any]:
     """Get device info for Home Assistant device registry."""
-    return {
+    model_name = device_data.get("model_name", "")
+    device_info = {
         "identifiers": {(DOMAIN, device_data["device_id"])},
         "name": device_data["name"],
         "manufacturer": "GOBZIGH",
-        "model": device_data["model_name"],
+        "model": model_name,
         "sw_version": device_data.get("firmware_version"),
         "connections": {(dr.CONNECTION_NETWORK_MAC, device_data["device_id"])},
         "configuration_url": f"http://{device_data.get('ap_ip', '')}" if device_data.get("ap_ip") else None,
     }
+    
+    # Add device icon
+    icon_url = get_device_icon(model_name)
+    if icon_url:
+        device_info["configuration_url"] = device_info.get("configuration_url") or icon_url
+        
+    return device_info
