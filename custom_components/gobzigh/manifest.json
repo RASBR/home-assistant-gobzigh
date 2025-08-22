@@ -1,0 +1,14 @@
+{
+  "domain": "gobzigh",
+  "name": "GOBZIGH",
+  "codeowners": ["@rasbr"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/RASBR/home-assistant-gobzigh",
+  "integration_type": "device",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/RASBR/home-assistant-gobzigh/issues",
+  "loggers": ["custom_components.gobzigh"],
+  "requirements": [],
+  "version": "1.0.0"
+}
