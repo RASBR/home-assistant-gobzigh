@@ -91,7 +91,7 @@ SENSOR_DESCRIPTIONS: tuple[SensorEntityDescription, ...] = (
         name="Current Volume",
         native_unit_of_measurement=UnitOfVolume.CUBIC_METERS,
         device_class=SensorDeviceClass.VOLUME,
-        state_class=SensorStateClass.MEASUREMENT,
+        state_class=None,  # Current volume is not a measurement or total_increasing
         icon="mdi:water",
     ),
     SensorEntityDescription(
@@ -99,7 +99,7 @@ SENSOR_DESCRIPTIONS: tuple[SensorEntityDescription, ...] = (
         name="Max Volume",
         native_unit_of_measurement=UnitOfVolume.CUBIC_METERS,
         device_class=SensorDeviceClass.VOLUME,
-        state_class=SensorStateClass.MEASUREMENT,
+        state_class=None,  # Tank capacity is not a measurement or total_increasing
         entity_category=EntityCategory.DIAGNOSTIC,
         icon="mdi:cube-outline",
     ),

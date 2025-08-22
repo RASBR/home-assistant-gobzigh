@@ -5,7 +5,7 @@
 
 A comprehensive Home Assistant custom integration for GOBZIGH liquid level monitoring devices.
 
-![GOBZIGH Logo](custom_components/gobzigh/static/000_gobzigh_l_512.png)
+![GOBZIGH Logo](custom_components/gobzigh/static/gobzigh-1.png)
 
 ## Features
 
