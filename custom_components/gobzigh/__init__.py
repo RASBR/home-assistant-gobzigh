@@ -51,11 +51,13 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     # Register static path for images
     static_path = os.path.join(os.path.dirname(__file__), "static")
-    hass.http.register_static_path(
-        f"/api/{DOMAIN}/static",
-        static_path,
-        cache_headers=False
-    )
+    await hass.http.async_register_static_paths([
+        StaticPathConfig(
+            url_path=f"/api/{DOMAIN}/static",
+            path=static_path,
+            cache_headers=False
+        )
+    ])
 
     # Set up platforms
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
