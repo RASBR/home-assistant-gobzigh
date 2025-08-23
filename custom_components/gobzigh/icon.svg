@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Placeholder SVG icon for GOBZIGH -->
+  <rect width="256" height="256" fill="#1f2937" rx="32"/>
+  <circle cx="128" cy="128" r="80" fill="#3b82f6"/>
+  <text x="128" y="140" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle" font-weight="bold">GOBZIGH</text>
+</svg>

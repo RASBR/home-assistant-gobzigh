@@ -12,5 +12,5 @@
   "integration_type": "device",
   "issue_tracker": "https://github.com/RASBR/home-assistant-gobzigh/issues",
   "loggers": ["custom_components.gobzigh"],
-  "icon": "static/gobzigh/icon.png"
+  "icon": "icon.png"
 }
