@@ -11,6 +11,7 @@ from .const import DOMAIN, CONF_USER_ID
 from .coordinator import GobzighDataUpdateCoordinator
 from .api import GobzighAPI
 from .services import async_setup_services, async_unload_services
+from .http import register_http_views
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -46,6 +47,9 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     # Set up services
     await async_setup_services(hass)
+
+    # Register HTTP routes for serving static images
+    register_http_views(hass)
 
     return True
 
