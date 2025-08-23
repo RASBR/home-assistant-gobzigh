@@ -1,7 +1,7 @@
 {
   "domain": "gobzigh",
   "name": "GOBZIGH",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "documentation": "https://github.com/RASBR/home-assistant-gobzigh",
   "dependencies": ["http"],
   "codeowners": ["@rasbr"],
