@@ -91,7 +91,7 @@ SENSOR_DESCRIPTIONS: tuple[SensorEntityDescription, ...] = (
         name="Current Volume",
         native_unit_of_measurement=UnitOfVolume.CUBIC_METERS,
         device_class=SensorDeviceClass.VOLUME,
-        state_class=None,  # Current volume is not a measurement or total_increasing
+        state_class=SensorStateClass.MEASUREMENT,
         icon="mdi:water",
     ),
     SensorEntityDescription(
