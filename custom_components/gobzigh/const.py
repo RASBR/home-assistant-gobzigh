@@ -67,5 +67,26 @@ SETTINGS_IS_AUTO: Final = "is_auto"
 SETTINGS_HEIGHT: Final = "height"
 SETTINGS_WIDTH: Final = "width"
 SETTINGS_LENGTH: Final = "length"
-SETTINGS_S_DIST: Final = "s_dist"
-SETTINGS_LIQUID_TYPE: Final = "liquid_type"
+# Example API response data structure (with randomized IDs for documentation):
+# [
+#   {
+#     "sensor_val": 75,
+#     "relay_state": false,
+#     "room_id": "507f191e810c19729de860ea",
+#     "connection_status": true,
+#     "device_id": "a1b2c3d4e5f6",
+#     "name": "Garden Tank",
+#     "firmware_version": "1.1.9",
+#     "model_name": "WLSV0",
+#     "ap_ip": "192.168.1.100",
+#     "loc_id": "507f1f77bcf86cd799439011",
+#     "user_id": "507f1f77bcf86cd799439011",
+#     "settings": {
+#       "height": 150,
+#       "width": 200,
+#       "length": 300,
+#       "s_dist": 50,
+#       "has_relay": true
+#     }
+#   }
+# ]

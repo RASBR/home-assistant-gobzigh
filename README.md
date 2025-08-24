@@ -77,7 +77,7 @@ config/
 1. Go to **Configuration** → **Integrations**
 2. Click **"+ ADD INTEGRATION"**
 3. Search for **"Gobzigh"** and select it
-4. Enter your **24-character User ID** (e.g., `665854859c2ad80012bb752d`)
+4. Enter your **24-character User ID** (e.g., `507f1f77bcf86cd799439011`)
 5. Click **"SUBMIT"**
 
 ### Device Discovery & Addition

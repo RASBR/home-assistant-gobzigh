@@ -47,7 +47,7 @@ Write-Host "1. Restart Home Assistant" -ForegroundColor White
 Write-Host "2. Go to Configuration → Integrations" -ForegroundColor White
 Write-Host "3. Click '+ ADD INTEGRATION'" -ForegroundColor White
 Write-Host "4. Search for 'Gobzigh' and select it" -ForegroundColor White
-Write-Host "5. Enter your 24-character User ID" -ForegroundColor White
+Write-Host "5. Enter your 24-character User ID (e.g., 507f1f77bcf86cd799439011)" -ForegroundColor White
 Write-Host "6. Add discovered devices as needed" -ForegroundColor White
 Write-Host ""
 Write-Host "📖 For more information, see:" -ForegroundColor Cyan

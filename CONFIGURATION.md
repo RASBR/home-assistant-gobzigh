@@ -12,7 +12,7 @@
 
 When adding the integration, you will be prompted to enter:
 
-- **User ID**: Your 24-character Gobzigh User ID (e.g., `665854859c2ad80012bb752d`)
+- **User ID**: Your 24-character Gobzigh User ID (e.g., `507f1f77bcf86cd799439011`)
 
 ## Device Discovery
 
@@ -77,10 +77,41 @@ The integration includes local fallback icons. If they don't appear:
 2. Clear your browser cache
 3. Check Home Assistant logs for HTTP errors
 
+## Example Device Response Structure
+
+```json
+{
+  "sensor_val": 75,
+  "relay_state": false,
+  "room_id": "507f191e810c19729de860ea",
+  "connection_status": true,
+  "device_id": "a1b2c3d4e5f6",
+  "name": "Garden Tank",
+  "firmware_version": "1.1.9",
+  "model_name": "WLSV0",
+  "ap_ip": "192.168.1.100",
+  "loc_id": "507f1f77bcf86cd799439011",
+  "user_id": "507f1f77bcf86cd799439011",
+  "settings": {
+    "height": 150,
+    "width": 200,
+    "length": 300,
+    "s_dist": 50,
+    "has_relay": true
+  },
+  "consumption": {
+    "day": 125,
+    "week": 875,
+    "month": 3500
+  }
+}
+```
+
+**Note**: All IDs shown above are randomized examples for documentation purposes.
+
 ## API Information
 
 The integration uses these endpoints:
-- Device List: `https://test.autobayt.com/v1/level-sensor-device?user_id={user_id}`
 - Device Detail: `https://test.autobayt.com/v1/level-sensor-device?device_id={device_id}`
 - Relay Control: `https://test.autobayt.com/v1/level-sensor-device/relay`
 

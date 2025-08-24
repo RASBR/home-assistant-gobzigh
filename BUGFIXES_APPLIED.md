@@ -72,8 +72,8 @@ custom_components/gobzigh/
 **Gobzigh**
 **Liquid Level** (WLSV0)
 
-Device: Pool Tank
-ID: b0b21c51a460
+Device: Garden Tank
+ID: a1b2c3d4e5f6
 
 Do you want to add this device?
 ```
