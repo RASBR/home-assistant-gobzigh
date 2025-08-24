@@ -1,0 +1,46 @@
+{
+  "component": {
+    "gobzigh": {
+      "title": "Gobzigh"
+    }
+  },
+  "config": {
+    "step": {
+      "user": {
+        "title": "Setup Gobzigh Integration",
+        "description": "Enter your Gobzigh User ID to discover and add your devices.",
+        "data": {
+          "user_id": "User ID"
+        }
+      },
+      "discovery_confirm": {
+        "title": "Add Gobzigh Device",
+        "description": "Do you want to add this {device_type} device?\\n\\n**Device Name**: {device_name}\\n**Model**: {model_name}"
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to Gobzigh servers. Please check your internet connection and try again.",
+      "no_devices_found": "No devices were retrieved. Please check that you have provided the correct User ID, or that the server is online and you have internet access.",
+      "invalid_user_id_length": "User ID must be exactly 24 characters long.",
+      "unknown": "Unknown error occurred. Please try again."
+    },
+    "abort": {
+      "already_configured": "Device is already configured",
+      "no_device_data": "No device data available"
+    }
+  },
+  "options": {
+    "step": {
+      "user": {
+        "title": "Gobzigh Options",
+        "description": "Update your Gobzigh configuration settings.",
+        "data": {
+          "user_id": "User ID"
+        }
+      }
+    },
+    "error": {
+      "invalid_user_id_length": "User ID must be exactly 24 characters long."
+    }
+  }
+}

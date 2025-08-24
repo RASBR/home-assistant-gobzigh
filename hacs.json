@@ -1,0 +1,7 @@
+{
+    "name": "Gobzigh",
+    "country": ["*"],
+    "domains": ["gobzigh"],
+    "homeassistant": "2024.1.0",
+    "iot_class": "Cloud Polling"
+}
