@@ -67,6 +67,7 @@ SETTINGS_IS_AUTO: Final = "is_auto"
 SETTINGS_HEIGHT: Final = "height"
 SETTINGS_WIDTH: Final = "width"
 SETTINGS_LENGTH: Final = "length"
+SETTINGS_S_DIST: Final = "s_dist"
 # Example API response data structure (with randomized IDs for documentation):
 # [
 #   {

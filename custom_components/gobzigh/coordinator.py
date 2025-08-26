@@ -160,6 +160,11 @@ class GobzighCoordinator(DataUpdateCoordinator):
         """Remove a device from monitoring."""
         self._added_devices.discard(device_id)
 
+    def reset_device_discovery(self, device_id: str) -> None:
+        """Reset device discovery status to allow rediscovery."""
+        self._discovered_devices.pop(device_id, None)
+        _LOGGER.debug("Reset discovery for device: %s", device_id)
+
     def get_device_type_info(self, model_name: str) -> Dict[str, Any] | None:
         """Get device type information from model name."""
         for device_type in DEVICE_TYPES:

@@ -10,6 +10,5 @@
   "requirements": ["aiohttp"],
   "version": "1.0.0",
   "integration_type": "hub",
-  "loggers": ["custom_components.gobzigh"],
-  "icon": "mdi:water-percent"
+  "loggers": ["custom_components.gobzigh"]
 }

@@ -1,0 +1,27 @@
+{
+  "entity": {
+    "sensor": {
+      "level": {
+        "default": "mdi:water-percent",
+        "state": {
+          "low": "mdi:water-alert",
+          "high": "mdi:water-check"
+        }
+      }
+    },
+    "switch": {
+      "relay": {
+        "default": "mdi:electric-switch"
+      }
+    },
+    "binary_sensor": {
+      "connection": {
+        "default": "mdi:wifi",
+        "state": {
+          "on": "mdi:wifi",
+          "off": "mdi:wifi-off"
+        }
+      }
+    }
+  }
+}
