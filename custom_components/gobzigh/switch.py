@@ -100,7 +100,7 @@ class GobzighRelaySwitchEntity(CoordinatorEntity, SwitchEntity):
 
     async def _async_set_relay_state(self, state: bool) -> None:
         """Set the relay state."""
-        url = f"https://test.autobayt.com/v1/level-sensor-device/relay"
+        url = f"https://test.gobzigh.com/v1/level-sensor-device/relay"
         
         payload = {
             "device_id": self._device_id,

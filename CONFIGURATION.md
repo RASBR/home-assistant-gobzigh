@@ -112,8 +112,8 @@ The integration includes local fallback icons. If they don't appear:
 ## API Information
 
 The integration uses these endpoints:
-- Device Detail: `https://test.autobayt.com/v1/level-sensor-device?device_id={device_id}`
-- Relay Control: `https://test.autobayt.com/v1/level-sensor-device/relay`
+- Device Detail: `https://test.gobzigh.com/v1/level-sensor-device?device_id={device_id}`
+- Relay Control: `https://test.gobzigh.com/v1/level-sensor-device/relay`
 
 Update interval: 290 seconds (configurable in future versions)
 

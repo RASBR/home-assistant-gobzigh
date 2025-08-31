@@ -4,8 +4,8 @@ from typing import Final
 DOMAIN: Final = "gobzigh"
 
 # API Configuration
-USER_DEVICE_LIST_URL: Final = "https://test.autobayt.com/v1/level-sensor-device?user_id="
-DEVICE_DETAIL_URL: Final = "https://test.autobayt.com/v1/level-sensor-device?device_id="
+USER_DEVICE_LIST_URL: Final = "https://test.gobzigh.com/v1/level-sensor-device?user_id="
+DEVICE_DETAIL_URL: Final = "https://test.gobzigh.com/v1/level-sensor-device?device_id="
 
 # Device Types Configuration
 DEVICE_TYPES: Final = [
