@@ -1,7 +1,13 @@
 # Gobzigh Home Assistant Integration
 
+[![Made with GitHub Copilot & Claude](https://img.shields.io/badge/Made%20with-Copilot%20%26%20Claude-7B68EE?logo=github&logoColor=white&style=flat)](https://github.com/features/copilot)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2024.1+-blue.svg)](https://www.home-assistant.io/)
+![Version](https://img.shields.io/github/v/release/RASBR/home-assistant-gobzigh)
+![Last Commit](https://img.shields.io/github/last-commit/RASBR/home-assistant-gobzigh?date_format=dd-mmm-yyyy)
+![Stars](https://img.shields.io/github/stars/RASBR/home-assistant-gobzigh)
+![Forks](https://img.shields.io/github/forks/RASBR/home-assistant-gobzigh)
+![Issues](https://img.shields.io/github/issues/RASBR/home-assistant-gobzigh)
 
 A comprehensive Home Assistant custom integration for Gobzigh liquid level monitoring devices with automatic device discovery and seamless integration.
 

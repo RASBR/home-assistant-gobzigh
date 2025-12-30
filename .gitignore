@@ -134,3 +134,6 @@ deps/
 *.temp
 .temp/
 temp/
+
+# Workspace files
+gobzigh.code-workspace

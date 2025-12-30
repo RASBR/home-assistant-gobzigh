@@ -11,5 +11,8 @@
       "name": "Kaco (REFERENCE)",
       "settings": { "files.readonlyInclude": ["**/*"] }
     }
-  ]
+  ],
+  "settings": {
+    "powershell.cwd": "Gobzigh (ACTIVE)"
+  }
 }
