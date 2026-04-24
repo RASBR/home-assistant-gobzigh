@@ -178,9 +178,9 @@ logger:
 ## 🛠️ Development
 
 ### API Endpoints
-- Device List: `https://test.gobzigh.com/v1/level-sensor-device?user_id={user_id}`
-- Device Detail: `https://test.gobzigh.com/v1/level-sensor-device?device_id={device_id}`
-- Relay Control: `https://test.gobzigh.com/v1/level-sensor-device/relay`
+- Device List: `https://api.gobzigh.com/v1/level-sensor-device?user_id={user_id}`
+- Device Detail: `https://api.gobzigh.com/v1/level-sensor-device?device_id={device_id}`
+- Relay Control: `https://api.gobzigh.com/v1/level-sensor-device/relay`
 
 ### Contributing
 1. Fork the repository
@@ -304,7 +304,7 @@ automation:
 ## API Information
 
 This integration connects to GOBZIGH cloud services at:
-- **Base URL**: `https://test.gobzigh.com/v1/level-sensor-device`
+- **Base URL**: `https://api.gobzigh.com/v1/level-sensor-device`
 - **Update Interval**: 5 minutes (configurable)
 - **Authentication**: User ID-based (no tokens required)
 
