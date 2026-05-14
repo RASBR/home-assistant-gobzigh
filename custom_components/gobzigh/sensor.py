@@ -285,7 +285,7 @@ class GobzighCurrentVolumeSensor(GobzighSensorEntity):
         self._attr_name = f"{device_name} Current Volume"
         self._attr_native_unit_of_measurement = UNIT_CUBIC_METERS
         self._attr_device_class = SensorDeviceClass.VOLUME
-        self._attr_state_class = SensorStateClass.MEASUREMENT
+        self._attr_state_class = SensorStateClass.TOTAL
 
     @property
     def native_value(self) -> float | None:
@@ -324,7 +324,7 @@ class GobzighMaxVolumeSensor(GobzighSensorEntity):
         self._attr_name = f"{device_name} Max Volume"
         self._attr_native_unit_of_measurement = UNIT_CUBIC_METERS
         self._attr_device_class = SensorDeviceClass.VOLUME
-        self._attr_state_class = SensorStateClass.MEASUREMENT
+        self._attr_state_class = SensorStateClass.TOTAL
 
     @property
     def native_value(self) -> float | None:
